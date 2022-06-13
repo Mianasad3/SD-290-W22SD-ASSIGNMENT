@@ -1,0 +1,15 @@
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\bin\Debug\net6.0\SD-290-Assignment.exe
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\bin\Debug\net6.0\SD-290-Assignment.deps.json
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\bin\Debug\net6.0\SD-290-Assignment.runtimeconfig.json
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\bin\Debug\net6.0\SD-290-Assignment.dll
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\bin\Debug\net6.0\SD-290-Assignment.pdb
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.AssemblyInfoInputs.cache
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.AssemblyInfo.cs
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.dll
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\refint\SD-290-Assignment.dll
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.pdb
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\SD-290-Assignment.genruntimeconfig.cache
+C:\Users\Owner\source\repos\SD-290-W22SD-ASSIGNMENT\SD-290-Assignment\SD-290-Assignment\obj\Debug\net6.0\ref\SD-290-Assignment.dll
