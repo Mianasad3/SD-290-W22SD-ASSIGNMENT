@@ -1,69 +1,50 @@
-﻿using System;
-using System.Text;
+﻿
 
-
-
- class program
+using System;  //Libarary
+using System.Text;  //Namespace
+namespace VendorMachine
 {
-    static string compress(string str)
+    class Machine
     {
-        if (str == null || str == "")//if string is empty return empty
+
+        private int DAmount;
+        const int cost = 95;
+
+
+        public Machine()
         {
-            return str;
+            DAmount = 0;
         }
-        StringBuilder sb = new StringBuilder();
-        char prevChar = str[0];
-        int count = 1;
-        for (int i = 1; i < str.Length; i++)
+        public void DCoin(int coinAmount)
         {
-            if (str[i] == prevChar)
+            DAmount += coinAmount; //Increment in Damount
+        }
+        public void GetDrink()
+        {
+            if (DAmount >= cost)   //cost is greater then the if work
             {
-                count++;
+                Console.WriteLine("Your Change is {0} cents", DAmount - cost);  //Printing
             }
             else
-            {
-                sb.Append(prevChar); //insert char
-                sb.Append(count);//insert count
-                prevChar = str[i];//set previous to current char
-                count = 1;
-            }
+                Console.WriteLine("insert more coins");  //if cost is less 
+
         }
-
-        sb.Append(prevChar);
-        sb.Append(count);
-        string result = sb.ToString();//create a string from builder
-
-        if (result.Length >= str.Length)
+        public void GetRefund()
         {
-            return str;
+            Console.WriteLine("You were refunded {0}", DAmount); //Printing
+            DCoin(0);
         }
-        return result;
-    }
 
 
-    static void Main(string[] args)
-    {
-        string exampleString = null;
-        string result = compress(exampleString);
-        Console.WriteLine(result);
-
-        exampleString = "aabbcc";
-        Console.WriteLine(exampleString);
-        result = compress(exampleString);
-        Console.WriteLine(result);
-
-        exampleString = "aabbccc";
-        Console.WriteLine(exampleString);
-        result = compress(exampleString);
-        Console.WriteLine(result);
-
-        exampleString = "aabbbbbbccccccc";
-        Console.WriteLine(exampleString);
-        result = compress(exampleString);
-        Console.WriteLine(result);
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("************ Hello from vendor Machine *************** ");//Starting
+            var Machine = new Machine();
+            Machine.DCoin(70);  //Pasing 70 to DCOIN
+            Machine.DCoin(3);   //passing 3 to DCOIN
+            Machine.GetDrink(); //calling Getdrink
+            Console.ReadLine(); //calling ReadLine
+        }
     }
 }
-
-
-
 
