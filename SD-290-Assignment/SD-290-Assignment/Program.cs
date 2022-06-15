@@ -1,47 +1,116 @@
 ﻿using System;
+using System.Text;
 
 {
-    static void FREQ(String str, int SIZE)
+
+ class program
+{
+    static string compress(string str)
     {
-        // size of the string 'str'
-        int n = str.Length;
-        int[] freq = new int[SIZE];
-        for (int i = 0; i < n; i++)
-            freq[str[i] - 'a']++;
-        // traverse 'str' from left to right
-        for (int i = 0; i < n; i++)
+        if (str == null || str == "")//if string is empty return empty
         {
-            if (freq[str[i] - 'a'] != 0)
+            return str;
+        }
+        StringBuilder sb = new StringBuilder();
+        char prevChar = str[0];
+        int count = 1;
+        for (int i = 1; i < str.Length; i++)
+        {
+            if (str[i] == prevChar)
             {
-                // print the character along with its
-                // frequency
-                Console.Write(str[i]);
-                Console.Write(freq[str[i] - 'a'] + " ");
-                // printed again
-                freq[str[i] - 'a'] = 0;
+                count++;
+            }
+            else
+            {
+                sb.Append(prevChar); //insert char
+                sb.Append(count);//insert count
+                prevChar = str[i];//set previous to current char
+                count = 1;
             }
         }
+
+        sb.Append(prevChar);
+        sb.Append(count);
+        string result = sb.ToString();//create a string from builder
+
+        if (result.Length >= str.Length)
+        {
+            return str;
+        }
+        return result;
     }
-    public static void Main()
+
+
+    static void Main(string[] args)
     {
-        int SIZE = 0;
-        Console.Write("Enter number of size ");
-        SIZE = Convert.ToInt32(Console.ReadLine());
-        string[] arr = new string[SIZE];
-        int i;
-        Console.Write("Read and Print elements of an array:\n");
-        Console.Write("Input elements of \n", SIZE);
-        for (i = 0; i < SIZE; i++)
-        {
-            Console.Write("element - {0} : ", i);
-            arr[i] = Console.ReadLine();
-        }
-        Console.Write("\nElements in array are: ");
-        for (i = 0; i < 10; i++)
-        {
-            Console.Write("{0}  ", arr[i]);
-        }
-        Console.Write("\n");
-        FREQ(arr, SIZE);
+        string exampleString = null;
+        string result = compress(exampleString);
+        Console.WriteLine(result);
+
+        exampleString = "aabbcc";
+        Console.WriteLine(exampleString);
+        result = compress(exampleString);
+        Console.WriteLine(result);
+
+        exampleString = "aabbccc";
+        Console.WriteLine(exampleString);
+        result = compress(exampleString);
+        Console.WriteLine(result);
+
+        exampleString = "aabbbbbbccccccc";
+        Console.WriteLine(exampleString);
+        result = compress(exampleString);
+        Console.WriteLine(result);
     }
 }
+}
+
+
+using System;  //Libarary
+using System.Text;  //Namespace
+namespace VendorMachine
+{
+    class Machine
+    {
+
+        private int DAmount;
+        const int cost = 95;
+
+
+        public Machine()
+        {
+            DAmount = 0;
+        }
+        public void DCoin(int coinAmount)
+        {
+            DAmount += coinAmount; //Increment in Damount
+        }
+        public void GetDrink()
+        {
+            if (DAmount >= cost)   //cost is greater then the if work
+            {
+                Console.WriteLine("Your Change is {0} cents", DAmount - cost);  //Printing
+            }
+            else
+                Console.WriteLine("insert more coins");  //if cost is less 
+
+        }
+        public void GetRefund()
+        {
+            Console.WriteLine("You were refunded {0}", DAmount); //Printing
+            DCoin(0);
+        }
+
+
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("************ Hello from vendor Machine *************** ");//Starting
+            var Machine = new Machine();
+            Machine.DCoin(70);  //Pasing 70 to DCOIN
+            Machine.DCoin(3);   //passing 3 to DCOIN
+            Machine.GetDrink(); //calling Getdrink
+            Console.ReadLine(); //calling ReadLine
+        }
+    }
+}
+
