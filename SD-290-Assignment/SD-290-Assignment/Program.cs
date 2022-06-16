@@ -1,116 +1,77 @@
 ﻿using System;
-using System.Text;
-
+namespace palindrome
 {
-
- class program
-{
-    static string compress(string str)
+    class Program
     {
-        if (str == null || str == "")//if string is empty return empty
+
+        static void IsPalindrome(string &str)
         {
-            return str;
-        }
-        StringBuilder sb = new StringBuilder();
-        char prevChar = str[0];
-        int count = 1;
-        for (int i = 1; i < str.Length; i++)
-        {
-            if (str[i] == prevChar)
+            string reverse = "";
+            for (int i = str.Length - 1; i >= 0; i--) //String Reverse  
             {
-                count++;
+                reverse += str[i].ToString();
+            }
+            if (reverse == str) //***********Checking whether string is palindrome or not******* 
+            {
+                Console.WriteLine("String is Palindrome :) \n Entered String Was {0} and reverse string is {1}", str, reverse);
             }
             else
             {
-                sb.Append(prevChar); //insert char
-                sb.Append(count);//insert count
-                prevChar = str[i];//set previous to current char
+                Console.WriteLine("String is not Palindrome check it again \n ", str, reverse);
+            }
+            Console.ReadKey();
+        }
+
+
+
+
+        static void Main(string[] args)
+        {
+            string str;
+            Console.WriteLine(" Enter string");  //input string
+            str = Console.ReadLine();
+            IsPalindrome(str);
+        }
+    }
+}
+    using System;  
+                          
+    public class DuplicateCharacters
+{
+    public static void Main()
+    {
+        void Duplicate()
+        {
+            String str = "restrest";
+            int count;
+
+            //Converts given string into character array  
+            char[] str1 = str.ToCharArray();
+
+            Console.WriteLine("Duplicate characters in a given string: ");
+            //Counts each character present in the string  
+            for (int i = 0; i < str1.Length; i++)
+            {
                 count = 1;
+                for (int j = i + 1; j < str1.Length; j++)
+                {
+                    if (str1[i] == str1[j] && str1[i] != ' ')
+                    {
+                        count++;
+                        //Set string1[j] to zero to avoid printing prreviously visited character  
+                        str1[j] = '0';
+                    }
+                }
+                //A character is considered as duplicate if count is greater than 1  
+                if (count > 1 && str1[i] != '0')
+                    Console.WriteLine(str1[i]);
             }
         }
 
-        sb.Append(prevChar);
-        sb.Append(count);
-        string result = sb.ToString();//create a string from builder
-
-        if (result.Length >= str.Length)
+        void main()
         {
-            return str;
-        }
-        return result;
-    }
-
-
-    static void Main(string[] args)
-    {
-        string exampleString = null;
-        string result = compress(exampleString);
-        Console.WriteLine(result);
-
-        exampleString = "aabbcc";
-        Console.WriteLine(exampleString);
-        result = compress(exampleString);
-        Console.WriteLine(result);
-
-        exampleString = "aabbccc";
-        Console.WriteLine(exampleString);
-        result = compress(exampleString);
-        Console.WriteLine(result);
-
-        exampleString = "aabbbbbbccccccc";
-        Console.WriteLine(exampleString);
-        result = compress(exampleString);
-        Console.WriteLine(result);
-    }
-}
-}
-
-
-using System;  //Libarary
-using System.Text;  //Namespace
-namespace VendorMachine
-{
-    class Machine
-    {
-
-        private int DAmount;
-        const int cost = 95;
-
-
-        public Machine()
-        {
-            DAmount = 0;
-        }
-        public void DCoin(int coinAmount)
-        {
-            DAmount += coinAmount; //Increment in Damount
-        }
-        public void GetDrink()
-        {
-            if (DAmount >= cost)   //cost is greater then the if work
-            {
-                Console.WriteLine("Your Change is {0} cents", DAmount - cost);  //Printing
-            }
-            else
-                Console.WriteLine("insert more coins");  //if cost is less 
-
-        }
-        public void GetRefund()
-        {
-            Console.WriteLine("You were refunded {0}", DAmount); //Printing
-            DCoin(0);
-        }
-
-
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("************ Hello from vendor Machine *************** ");//Starting
-            var Machine = new Machine();
-            Machine.DCoin(70);  //Pasing 70 to DCOIN
-            Machine.DCoin(3);   //passing 3 to DCOIN
-            Machine.GetDrink(); //calling Getdrink
-            Console.ReadLine(); //calling ReadLine
+            Duplicate();
         }
     }
-}
 
+}
